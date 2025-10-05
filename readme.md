@@ -18,13 +18,14 @@ Frameworks used:
 
 ## 💬 App Use
 
-Type a question in the chat — it can be: A conversational message, a FAQ question, a product search query
-
-![Chatbot Architecture](images_readme/SemanticRoutes.png)
-
+Type a question in the chat — it can be: A conversational message, a FAQ question, a product search query.
 If the prompt is not correctly processed, the user can manually select how to route it:
 
-![Chatbot Architecture](images_readme/EnforcedRoute.png)
+<p align="center">
+  <img src="images_readme/SemanticRoutes.png" alt="Semantic Routing" width="40%"/>
+  <img src="images_readme/EnforcedRoute.png" alt="Semantic Enforced Routing" width="40%"/>
+</p>
+
 
 ## ⚠️ Limitations
 
