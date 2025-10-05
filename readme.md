@@ -22,8 +22,8 @@ Type a question in the chat — it can be: A conversational message, a FAQ quest
 If the prompt is not correctly processed, the user can manually select how to route it:
 
 <p align="center">
-  <img src="images_readme/SemanticRoutes.png" alt="Semantic Routing" width="40%"/>
-  <img src="images_readme/EnforcedRoute.png" alt="Semantic Enforced Routing" width="40%"/>
+  <img src="images_readme/SemanticRoutes.png" alt="Semantic Routing" width="45%"/>
+  <img src="images_readme/EnforcedRoute.png" alt="Semantic Enforced Routing" width="45%"/>
 </p>
 
 
