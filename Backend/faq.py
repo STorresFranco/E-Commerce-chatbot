@@ -10,12 +10,6 @@ import sys
 sys.path.append(os.path.abspath("."))
 from Backend.semantic_routing import rl
 
-#Initialization
-load_dotenv()
-
-GROQ_KEY=os.getenv("GROQ_KEY")
-GROQ_MODEL=os.getenv("GROQ_MODEL")
-
 #%% Functions
 def initializer():
     ''' 
@@ -143,4 +137,5 @@ def faq_chain(client,query,collection_name):
     return answer
 
 if __name__=="__main__":
+
     print(rl.router("What is the return policy of the products?").name)
