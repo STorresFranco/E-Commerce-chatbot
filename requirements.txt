@@ -1,0 +1,9 @@
+streamlit==1.50.0
+Chroma==0.2.0
+chromadb==1.1.0
+groq==0.31.1
+pandas==2.3.2
+SQLAlchemy==2.0.43
+regex==2025.9.18
+semantic-router==0.1.11
+semantic==1.0.3
