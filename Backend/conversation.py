@@ -5,7 +5,6 @@ from pathlib import Path
 
 #Paths
 sys.path.append(os.path.abspath("."))
-ENV_PATH=Path(__file__).parent / ".env"
 
 PROMPT_TEMPLATE='''
     You are a commercial advisor who will help a customer to solve a query. 
@@ -69,4 +68,5 @@ def conv_response(query):
 
 
     return response
+
 
