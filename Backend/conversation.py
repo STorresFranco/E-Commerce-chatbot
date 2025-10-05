@@ -1,15 +1,11 @@
 import sys
 import os
 from groq import Groq
-from dotenv import load_dotenv
 from pathlib import Path
 
 #Paths
 sys.path.append(os.path.abspath("."))
 ENV_PATH=Path(__file__).parent / ".env"
-
-#Environment variables loading
-load_dotenv(ENV_PATH)
 
 PROMPT_TEMPLATE='''
     You are a commercial advisor who will help a customer to solve a query. 
@@ -62,5 +58,6 @@ def conv_response(query):
 
     #take the answer
     response=chat_message.choices[0].message.content
+
 
     return response
