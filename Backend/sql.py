@@ -3,7 +3,6 @@ import pandas as pd
 import sys
 import os
 from groq import Groq
-from dotenv import load_dotenv
 from pathlib import Path
 import re
 
@@ -11,12 +10,6 @@ import re
 sys.path.append(os.path.abspath("."))
 DB_PATH=Path(__file__).parent / "resources/db.sqlite"
 ENV_PATH=Path(__file__).parent / ".env"
-
-
-#Load env viarables
-
-
-load_dotenv(ENV_PATH)
 
 #Create Groq client
 client_sql=Groq()
@@ -186,4 +179,5 @@ def concatenated_process(query):
 if __name__=="__main__":
     pass
  
+
 
