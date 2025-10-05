@@ -37,6 +37,14 @@ PROMPT_TEMPLATE='''
 '''
 
 def conv_response(query):
+    '''
+    Description:
+        Function to elaborate a response to a conversational query given by the user
+    Inputs:
+        query (str): Query given by the user
+    Returns
+        response (str): response given by the LLM
+    '''
     #Creating groq client
     conv_client=Groq()
 
@@ -61,3 +69,4 @@ def conv_response(query):
 
 
     return response
+
