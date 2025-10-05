@@ -24,7 +24,7 @@ Type a question in the chat — it can be: A conversational message, a FAQ quest
 
 If the prompt is not correctly processed, the user can manually select how to route it:
 
-![Chatbot Architecture](images_readme/GeneralArchitecture.png)
+
 
 ## ⚠️ Limitations
 
@@ -39,7 +39,7 @@ The user prompt is first classified by a semantic router, then processed based o
 * FAQ – Retrieves the most relevant chunks from the FAQ vector database and generates an answer
 * Product – Transforms the user query into an SQL request and fetches matching shoes
 
-🖼️ [Add an architecture image here]
+![Chatbot Architecture](images_readme/GeneralArchitecture.png)
 
 For a complete technical explanation of each route. **See technical_description.md in the project root folder.**
 
