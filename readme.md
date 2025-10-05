@@ -20,11 +20,11 @@ Frameworks used:
 
 Type a question in the chat — it can be: A conversational message, a FAQ question, a product search query
 
-🖼️ [Add images demonstrating each type of use]
+![Chatbot Architecture](images_readme/SemanticRoutes.png)
 
 If the prompt is not correctly processed, the user can manually select how to route it:
 
-
+![Chatbot Architecture](images_readme/EnforcedRoute.png)
 
 ## ⚠️ Limitations
 
