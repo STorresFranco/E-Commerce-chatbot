@@ -111,7 +111,7 @@ def generate_answer(query,context):
                 "content": template,
             }
         ],
-        model=GROQ_MODEL, # type: ignore
+        model=os.getenv("GROQ_MODEL"), # type: ignore
     )
     return chat_completion.choices[0].message.content
 
@@ -135,5 +135,6 @@ def faq_chain(client,query,collection_name):
 if __name__=="__main__":
 
     print(rl.router("What is the return policy of the products?").name)
+
 
 
