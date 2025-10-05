@@ -9,3 +9,4 @@ semantic-router==0.1.11
 semantic==1.0.3
 transformers==4.56.2
 torch==2.8.0
+sentence-transformers==5.1.0
