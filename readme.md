@@ -24,7 +24,7 @@ Type a question in the chat — it can be: A conversational message, a FAQ quest
 
 If the prompt is not correctly processed, the user can manually select how to route it:
 
-🖼️ [Add screenshot of this selection example]
+![Chatbot Architecture](images_readme/GeneralArchitecture.png)
 
 ## ⚠️ Limitations
 
