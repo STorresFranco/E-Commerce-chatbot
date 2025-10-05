@@ -9,7 +9,6 @@ import re
 #Paths
 sys.path.append(os.path.abspath("."))
 DB_PATH=Path(__file__).parent / "resources/db.sqlite"
-ENV_PATH=Path(__file__).parent / ".env"
 
 #Create Groq client
 client_sql=Groq()
@@ -179,5 +178,6 @@ def concatenated_process(query):
 if __name__=="__main__":
     pass
  
+
 
 
