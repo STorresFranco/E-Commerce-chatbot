@@ -60,7 +60,16 @@ For example:
 
 
 def run_query(query):
-    if query.strip().upper().startswith("SELECT"): #Making sure the query is well formulated
+    '''
+    Description:
+        Function to validate the start of a query and execute a pandas query based search
+    Inputs
+        query (str): SQL query to execute in pandas
+    Returns
+        df (Dataframe): Returns a Dataframe if the query start has correct syntax
+    '''
+    #Making sure the query is well formulated
+    if query.strip().upper().startswith("SELECT"): 
         with sqlite3.connect(DB_PATH) as conn:
             df=pd.read_sql_query(query,conn) #Read the query and return a dataframe
             return df
@@ -69,14 +78,16 @@ def run_query(query):
 def generate_sql_query(query):
     ''' 
     Description:
-        Function to get an answer from the chatbot based on a context and a query
+        Function to generate an SQL query based on an user given prompt
     Inputs
         query (str): Query passed by the user
-        context (str): Context passed by the user
+    Returns 
+        sql_query (str): Query formated in SQL syntax
     '''
-
+    #Creating the Groq client
     client = Groq()
 
+    #Generating the SQL query syntax
     chat_completion = client_sql.chat.completions.create(
         messages=[
             {
@@ -92,14 +103,27 @@ def generate_sql_query(query):
         temperature=0.2,
         max_tokens=1024
     )
+
+    #Draw results from LLM response
     sql_query_raw= chat_completion.choices[0].message.content
+    
+    #Clean format so it can be passed to pandas queries
     sql_query=sql_query_format(sql_query_raw)
     return sql_query
 
 def sql_query_format(sql_query):
-
+    '''
+    Description:
+        Function to execute rule based extraction of the generated SQL query
+    Inputs
+        sql_query (str): SQL with syntax query of which pattern is extracted
+    Returns
+        sql_content(str): SQL code to execute in pandas
+    '''
+    #Extract the pattern using regex
     pattern="<SQL>*(.*?)</SQL>"
     match=re.search(pattern,sql_query,re.DOTALL)
+
     # Print the matched SQL content if found
     if match:
         sql_content = match.group(1)
@@ -109,10 +133,20 @@ def sql_query_format(sql_query):
         return "No SQL block found."
 
 def query_response(query,in_df):
-
+    '''
+    Description:
+        Function to convert SQL retrieved dataframe into a humanized response
+    Inputs
+        query (str): Original query provided by the user
+        in_df (dataframe): Dataframe retrieved from SQL query        
+    '''
     #Convert df to context
     context=in_df.to_dict(orient="records")
+
+    #Create the Groq client
     response_client = Groq()
+
+    #Create response
     chat_completion = response_client.chat.completions.create(
         messages=[
             {
@@ -126,15 +160,30 @@ def query_response(query,in_df):
         ],
         model=os.getenv("GROQ_MODEL"), # type: ignore
         temperature=0.2)
+
+    #Take the text from the response
     response= chat_completion.choices[0].message.content
+
     return response
 
 def concatenated_process(query):
+    ''' 
+    Description 
+        Function to concatenate the full query process
+    Inputs
+        query (str): Query provided by the user
+    '''
+    #Convert the query to sql syntax
     sql_query=generate_sql_query(query)
+
+    #Return Df based on sql query
     df=run_query(sql_query)
+
+    #Convert the returned dataframe into a humanized response
     result=query_response(query,df)
     return result
 
 if __name__=="__main__":
     pass
  
+
