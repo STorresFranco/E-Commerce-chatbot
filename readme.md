@@ -1,3 +1,5 @@
+🛍️ # E-Commerce Chatbot
+
 🧩 General Overview
 
 This project implements a functional AI-powered chatbot that provides customer assistance and serves as a product search assistant for shoes.
