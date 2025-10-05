@@ -4,7 +4,6 @@ from chromadb.utils import embedding_functions
 import dotenv
 import pandas as pd
 from groq import Groq
-from dotenv import load_dotenv
 import os
 import sys
 sys.path.append(os.path.abspath("."))
@@ -139,3 +138,4 @@ def faq_chain(client,query,collection_name):
 if __name__=="__main__":
 
     print(rl.router("What is the return policy of the products?").name)
+
