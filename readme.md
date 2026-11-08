@@ -49,4 +49,4 @@ For a complete technical explanation of each route. **See technical_description.
 * Streamlit – Frontend framework
 * ChromaDB – Vector database
 * Groq API – LLM provider
-* Llama-3.3-70B-Versatile – Large Language Model
+* gpt-oss-120b – Large Language Model
