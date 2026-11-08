@@ -14,7 +14,7 @@ Frameworks used:
 
 ⚡ Groq – LLM execution framework
 
-🦙 Llama-3.3-70B-Versatile – Model powering responses
+🦙 gpt-oss-120b – Model powering responses
 
 ## 💬 App Use
 
