@@ -18,7 +18,9 @@ Frameworks used:
 
 ## 💬 App Use
 
-To live access the app you can use the following link https://e-commerce-chatbot-3gmpcpwtjidio4sghl9kdr.streamlit.app/. If the app is down let me know and I will inmidiately wake it up.
+To live access the app you can use the following link https://e-commerce-chatbot-3gmpcpwtjidio4sghl9kdr.streamlit.app/. 
+Note: If the project is down, let me know, and I will wake it up as Soon as possible. This happens because the frontend is hosted in streamlit cloud.
+
 
 Type a question in the chat — it can be: A conversational message, a FAQ question, a product search query.
 If the prompt is not correctly processed, the user can manually select how to route it:
